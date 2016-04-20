@@ -1,4 +1,6 @@
 import java.sql.*;
+import oracle.jdbc.*;
+import oracle.jdbc.pool.OracleDataSource;
 
 /**
  *
@@ -6,12 +8,31 @@ import java.sql.*;
  */
 public class Menu extends javax.swing.JFrame {
     //region Variables
-    public CallableStatement callableStm = null;
     public ResultSet rst = null;
     public static Connection conn = null;
     public String user = "leemarti";
     public String psw = "leemarti";
     public static String bd = "jdbc:oracle:thin:@mercure.clg.qc.ca:1521:orcl";
+    //endregion
+    //region CallableStatement
+    //Clients
+    public CallableStatement callable_InsertClient = null;
+    public CallableStatement callable_SupprimerClient = null;
+
+    //Circuits
+    public CallableStatement callable_InsertionCircuit = null;
+    public CallableStatement callable_ModifierCircuit = null;
+    public CallableStatement callable_SupprimerCircuit = null;
+
+    //Réservations
+    public CallableStatement callable_InsertionReservation = null;
+    public CallableStatement callable_ModifierReservation = null;
+    public CallableStatement callable_SupprimerReservation = null;
+
+    // Procédures
+    public CallableStatement callable_ListerClients = null;
+    public CallableStatement callable_ListerMonuments = null;
+    public CallableStatement callable_ChercherCircuit = null;
     //endregion
     /**
      * Creates new form Menu
@@ -1646,12 +1667,12 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
         //AJOUTER CLIENT
         String procedInsert = "EXECUTE TP3.INSERTION_CLIENT(?,?);";
-        try{
-
-        }
-        catch (SQLException ex){
-
-        }
+//        try{
+//
+//        }
+//        catch (SQLException ex){
+//
+//        }
         //ACTUALISER LISTE CLIENT
     }//GEN-LAST:event_jButtonAjouterClientActionPerformed
 
@@ -1790,26 +1811,36 @@ public class Menu extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-            Class.forName("oracle.jdbc.driver.OracleDriver");
-            System.out.println("Pilote chargé");
-        }
-        catch (ClassNotFoundException ex) {
-            System.err.println("Driver manquant");
-            System.exit(0);
-        }
+            OracleDataSource oracleDataSource = new OracleDataSource();
+            oracleDataSource.setURL(bd);
+            oracleDataSource.setUser(user);
+            oracleDataSource.setPassword(psw);
+            conn = oracleDataSource.getConnection();
 
-        try {
-            conn = DriverManager.getConnection(bd, user, psw);
+            System.out.println("Connexion ouvert");
 
-            try {
-                callableStm = conn.createStatement();
-                int n = stmt.executeUpdate(sql);
-                System.out.println("Le nombre de lignes a jour :" + n);
-            }
+            //region Initialiser callablement statement Clients
+            callable_InsertClient = conn.prepareCall("{call TP3.Insertion_Client(?,?)}");
+            callable_SupprimerClient = conn.prepareCall("{call TP3.Supprimer_Client(?)}");
+            //endregion
 
-            catch (SQLException ex) {
-                System.err.println(ex.getMessage());
-            }
+            //region Initialiser Callablement statement Circuits
+            callable_InsertionCircuit = conn.prepareCall("{call TP3.Insertion_Circuit(?,?,?,?,?,?)}");
+            callable_ModifierCircuit = conn.prepareCall("{call TP3.Modifier_Circuit(?,?,?,?,?,?)}");
+            callable_SupprimerCircuit = conn.prepareCall("{call TP3.Supprimer_Circuit(?)}");
+            //endregion
+
+            //region Initialiser Callablement statement Réservations
+            callable_InsertionReservation = conn.prepareCall("{call TP3.Insertion_Reservation(?,?,?,?,?,?,?)}");
+            callable_ModifierReservation = conn.prepareCall("{call TP3.Modifier_Reservation(?,?,?,?)}");
+            callable_SupprimerReservation = conn.prepareCall("{call TP3.Supprimer_Reservation(?,?,?,?)}");
+            //endregion
+
+            //region Initialiser Callablement statement Procédures
+            callable_ListerClients = conn.prepareCall("{call TP3.ListerClients(?)}");
+            callable_ListerMonuments = conn.prepareCall("{call TP3.ListerMonuments(?)}");
+            callable_ChercherCircuit = conn.prepareCall("{call TP3.ChercherCircuit(?)}");
+            //endregion
         }
         catch (SQLException ex) {
             System.err.println(ex.getMessage());
@@ -1839,16 +1870,6 @@ public class Menu extends javax.swing.JFrame {
                 new Menu().setVisible(true);
             }
         });
-        finally {
-            try {
-                if (conn != null)
-                    conn.close();
-                System.out.println("Connexion fermée");
-            }
-            catch (SQLException ex) {
-                System.out.println(ex.getMessage());
-            }
-        }
     }
 
     private String Histoire;
