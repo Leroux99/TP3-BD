@@ -1,9 +1,18 @@
+import java.sql.*;
+
 /**
  *
  * @author Leroux
  */
 public class Menu extends javax.swing.JFrame {
-
+    //region Variables
+    public CallableStatement callableStm = null;
+    public ResultSet rst = null;
+    private Connection conn = null;
+    private String user = "leemarti";
+    private String BD = "jdbc:oracle:thin:@mercure.clg.qc.ca:1521:orcl";
+    private String psw = "leemarti";
+    //endregion
     /**
      * Creates new form Menu
      */
@@ -1636,6 +1645,13 @@ public class Menu extends javax.swing.JFrame {
     private void jButtonAjouterClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAjouterClientActionPerformed
         // TODO add your handling code here:
         //AJOUTER CLIENT
+        String procedInsert = "EXECUTE TP3.INSERTION_CLIENT(?,?);";
+        try{
+
+        }
+        catch (SQLException ex){
+
+        }
         //ACTUALISER LISTE CLIENT
     }//GEN-LAST:event_jButtonAjouterClientActionPerformed
 
