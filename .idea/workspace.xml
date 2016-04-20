@@ -7,7 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76ba9835-0f74-460d-88c0-9a621dd10e14" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Menu.java" afterPath="$PROJECT_DIR$/src/Menu.java" />
     </list>
@@ -34,11 +33,11 @@
       <file leaf-file-name="Menu.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Menu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6181818">
-              <caret line="1804" column="50" selection-start-line="1804" selection-start-column="50" selection-end-line="1804" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.053409092">
+              <caret line="1754" column="34" selection-start-line="1754" selection-start-column="34" selection-end-line="1754" selection-end-column="34" />
               <folding>
-                <element signature="e#464#465#0" expanded="true" />
-                <element signature="e#496#497#0" expanded="true" />
+                <element signature="e#474#475#0" expanded="true" />
+                <element signature="e#506#507#0" expanded="true" />
                 <element signature="method#initComponents#0;class#Menu#0" expanded="false" />
               </folding>
             </state>
@@ -458,6 +457,13 @@
       <option name="number" value="Default" />
       <updated>1460159944242</updated>
     </task>
+    <task id="LOCAL-00001" summary="debut">
+      <created>1461170730077</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1461170730077</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -499,6 +505,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="debut" />
+    <option name="LAST_COMMIT_MESSAGE" value="debut" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <option name="time" value="6" />
@@ -515,8 +525,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#464#465#0" expanded="true" />
-            <element signature="e#496#497#0" expanded="true" />
+            <element signature="e#474#475#0" expanded="true" />
+            <element signature="e#506#507#0" expanded="true" />
             <element signature="method#initComponents#0;class#Menu#0" expanded="false" />
           </folding>
         </state>
@@ -556,8 +566,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#464#465#0" expanded="true" />
-            <element signature="e#496#497#0" expanded="true" />
+            <element signature="e#474#475#0" expanded="true" />
+            <element signature="e#506#507#0" expanded="true" />
             <element signature="method#initComponents#0;class#Menu#0" expanded="false" />
           </folding>
         </state>
@@ -597,8 +607,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
-            <element signature="e#464#465#0" expanded="true" />
-            <element signature="e#496#497#0" expanded="true" />
+            <element signature="e#474#475#0" expanded="true" />
+            <element signature="e#506#507#0" expanded="true" />
             <element signature="method#initComponents#0;class#Menu#0" expanded="false" />
           </folding>
         </state>
@@ -638,8 +648,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#464#465#0" expanded="true" />
-            <element signature="e#496#497#0" expanded="true" />
+            <element signature="e#474#475#0" expanded="true" />
+            <element signature="e#506#507#0" expanded="true" />
             <element signature="method#initComponents#0;class#Menu#0" expanded="false" />
           </folding>
         </state>
@@ -679,8 +689,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#464#465#0" expanded="true" />
-            <element signature="e#496#497#0" expanded="true" />
+            <element signature="e#474#475#0" expanded="true" />
+            <element signature="e#506#507#0" expanded="true" />
             <element signature="method#initComponents#0;class#Menu#0" expanded="false" />
           </folding>
         </state>
@@ -720,8 +730,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#464#465#0" expanded="true" />
-            <element signature="e#496#497#0" expanded="true" />
+            <element signature="e#474#475#0" expanded="true" />
+            <element signature="e#506#507#0" expanded="true" />
             <element signature="method#initComponents#0;class#Menu#0" expanded="false" />
           </folding>
         </state>
@@ -761,8 +771,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#464#465#0" expanded="true" />
-            <element signature="e#496#497#0" expanded="true" />
+            <element signature="e#474#475#0" expanded="true" />
+            <element signature="e#506#507#0" expanded="true" />
             <element signature="method#initComponents#0;class#Menu#0" expanded="false" />
           </folding>
         </state>
@@ -794,8 +804,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding>
-            <element signature="e#464#465#0" expanded="true" />
-            <element signature="e#496#497#0" expanded="true" />
+            <element signature="e#474#475#0" expanded="true" />
+            <element signature="e#506#507#0" expanded="true" />
             <element signature="method#initComponents#0;class#Menu#0" expanded="false" />
           </folding>
         </state>
@@ -816,8 +826,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding>
-            <element signature="e#464#465#0" expanded="true" />
-            <element signature="e#496#497#0" expanded="true" />
+            <element signature="e#474#475#0" expanded="true" />
+            <element signature="e#506#507#0" expanded="true" />
             <element signature="method#initComponents#0;class#Menu#0" expanded="false" />
           </folding>
         </state>
@@ -890,11 +900,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Menu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6181818">
-          <caret line="1804" column="50" selection-start-line="1804" selection-start-column="50" selection-end-line="1804" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.053409092">
+          <caret line="1754" column="34" selection-start-line="1754" selection-start-column="34" selection-end-line="1754" selection-end-column="34" />
           <folding>
-            <element signature="e#464#465#0" expanded="true" />
-            <element signature="e#496#497#0" expanded="true" />
+            <element signature="e#474#475#0" expanded="true" />
+            <element signature="e#506#507#0" expanded="true" />
             <element signature="method#initComponents#0;class#Menu#0" expanded="false" />
           </folding>
         </state>

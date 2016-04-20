@@ -8,10 +8,10 @@ public class Menu extends javax.swing.JFrame {
     //region Variables
     public CallableStatement callableStm = null;
     public ResultSet rst = null;
-    private Connection conn = null;
-    private String user = "leemarti";
-    private String BD = "jdbc:oracle:thin:@mercure.clg.qc.ca:1521:orcl";
-    private String psw = "leemarti";
+    public static Connection conn = null;
+    public String user = "leemarti";
+    public String psw = "leemarti";
+    public static String bd = "jdbc:oracle:thin:@mercure.clg.qc.ca:1521:orcl";
     //endregion
     /**
      * Creates new form Menu
@@ -1783,12 +1783,38 @@ public class Menu extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
+        try {
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+            System.out.println("Pilote chargé");
+        }
+        catch (ClassNotFoundException ex) {
+            System.err.println("Driver manquant");
+            System.exit(0);
+        }
+
+        try {
+            conn = DriverManager.getConnection(bd, user, psw);
+
+            try {
+                callableStm = conn.createStatement();
+                int n = stmt.executeUpdate(sql);
+                System.out.println("Le nombre de lignes a jour :" + n);
+            }
+
+            catch (SQLException ex) {
+                System.err.println(ex.getMessage());
+            }
+        }
+        catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Metal".equals(info.getName())) {
@@ -1813,6 +1839,16 @@ public class Menu extends javax.swing.JFrame {
                 new Menu().setVisible(true);
             }
         });
+        finally {
+            try {
+                if (conn != null)
+                    conn.close();
+                System.out.println("Connexion fermée");
+            }
+            catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
     }
 
     private String Histoire;
