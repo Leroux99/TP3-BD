@@ -1666,7 +1666,6 @@ public class Menu extends javax.swing.JFrame {
     private void jButtonAjouterClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAjouterClientActionPerformed
         // TODO add your handling code here:
         //AJOUTER CLIENT
-        String procedInsert = "EXECUTE TP3.INSERTION_CLIENT(?,?);";
 //        try{
 //
 //        }
@@ -1837,9 +1836,9 @@ public class Menu extends javax.swing.JFrame {
             //endregion
 
             //region Initialiser Callablement statement Procédures
-            callable_ListerClients = conn.prepareCall("{call TP3.ListerClients(?)}");
-            callable_ListerMonuments = conn.prepareCall("{call TP3.ListerMonuments(?)}");
-            callable_ChercherCircuit = conn.prepareCall("{call TP3.ChercherCircuit(?)}");
+            callable_ListerClients = conn.prepareCall("{call TP3.ListerClients(?,?)}");
+            callable_ListerMonuments = conn.prepareCall("{call TP3.ListerMonuments(?,?)}");
+            callable_ChercherCircuit = conn.prepareCall("{call TP3.ChercherCircuit(?,?)}");
             //endregion
         }
         catch (SQLException ex) {
