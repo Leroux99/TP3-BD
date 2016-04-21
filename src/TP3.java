@@ -1,3 +1,9 @@
+/**
+ * Créé par:
+ * Jérémie Leroux
+ * Joaquin Lee-Martinez
+ */
+
 import java.awt.*;
 import java.util.ArrayList;
 

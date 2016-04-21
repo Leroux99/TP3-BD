@@ -1,13 +1,14 @@
+/**
+ * Créé par:
+ * Jérémie Leroux
+ * Joaquin Lee-Martinez
+ */
 
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
-/**
- *
- * @author Leroux
- */
 public class JImagePanel extends JPanel {
     private Image img;
 
